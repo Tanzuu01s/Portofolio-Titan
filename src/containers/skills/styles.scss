@@ -1,0 +1,85 @@
+.skills {
+  &__content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+    justify-content: space-between;
+  }
+
+  &__card {
+    background-color: #1a1a1a;
+    border: 3px solid var(--yellow-theme-main-color); // BORDER DIBESARKAN
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1 1 100%; // AGAR LEBAR MAKSIMAL
+    width: 100%;
+    box-shadow: 0 0 15px rgba(255, 221, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 221, 0, 0.4);
+    }
+  }
+
+  &__card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .skills__card-icon {
+      font-size: 24px;
+      color: var(--yellow-theme-main-color);
+    }
+
+    .skills__category {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--yellow-theme-main-color);
+      margin: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__item {
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .rc-progress-line {
+      height: 12px;
+      border-radius: 6px;
+    }
+
+    .rc-progress-bg {
+      background-color: var(--yellow-theme-main-color);
+    }
+
+    .rc-progress-trail {
+      background-color: #555;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .skills__card {
+    flex: 1 1 calc(33% - 30px);
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  .skills__content-wrapper {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
